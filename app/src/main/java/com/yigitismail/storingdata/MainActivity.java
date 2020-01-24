@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     TextView textView;
     Button button;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
 
 
-        SharedPreferences sharedPreferences = this.getSharedPreferences("com.yigitismail.storingdata", Context.MODE_PRIVATE);
+         sharedPreferences = this.getSharedPreferences("com.yigitismail.storingdata", Context.MODE_PRIVATE);
 
 
 
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
             int userAge = Integer.parseInt(editText.getText().toString());
 
             textView.setText("Your age: " + userAge);
+
+            sharedPreferences.edit().putInt("storedAge",userAge).apply();
+
+            
+
+
+
+
 
 
 
