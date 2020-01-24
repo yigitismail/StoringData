@@ -55,4 +55,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
+    public void delete(View view){
+
+
+        int storeData =  sharedPreferences.getInt("storedAge",0);
+
+        if(storeData != 0){
+
+            sharedPreferences.edit().remove("storedAge").apply();
+
+            textView.setText("Your age: " );
+
+        }
+
+
+    }
 }
