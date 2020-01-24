@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     TextView textView;
-    Button button;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
             sharedPreferences.edit().putInt("storedAge",userAge).apply();
 
-            
+
 
 
 
