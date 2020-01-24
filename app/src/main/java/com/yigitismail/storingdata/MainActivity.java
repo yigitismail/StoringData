@@ -27,9 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
          sharedPreferences = this.getSharedPreferences("com.yigitismail.storingdata", Context.MODE_PRIVATE);
 
+         int storedAge = sharedPreferences.getInt("storedAge",0);
 
+         if(storedAge == 0){
 
+             textView.setText("Your age: ");
 
+         } else{
+
+             textView.setText("Your age: " + storedAge);
+
+         }
 
     }
 
@@ -44,16 +52,7 @@ public class MainActivity extends AppCompatActivity {
             sharedPreferences.edit().putInt("storedAge",userAge).apply();
 
 
-
-
-
-
-
-
-
         }
-
-
 
     }
 }
